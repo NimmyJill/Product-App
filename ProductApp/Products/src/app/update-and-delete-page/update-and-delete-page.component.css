@@ -1,0 +1,8 @@
+.card-header{
+    background-color: paleturquoise;
+    margin: .5vw;
+}
+.table{
+    background-color: rgb(234, 255, 185);
+    border: 2px solid lightgreen;
+}
