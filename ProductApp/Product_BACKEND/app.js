@@ -15,12 +15,19 @@ app.get('/products', function(req,res){
         });
 });
 
+// var loginStatus;
 app.post('/login', function(req,res){
+    console.log("Test");
     res.header("Access-control-Allow-Origin", "*")
     res.header("Access-control-Allow-Methods: GET, POST,PATCH, PUT, DELETE, OPTIONS");
-    userCredential.findOne(req.body.credential.email,req.body.credential.password)
+    console.log(req.body);
+    let Uname=req.body.credential.email;
+    let password= req.body.credential.password;
+    Userdata.findOne({email:Uname,password:password})
         .then(function(credential){
+            console.log(credential);
             res.send(credential);
+           
         });
 });
 
@@ -55,7 +62,8 @@ app.post('/singleProduct', function(req,res){
 app.post('/update', function(req,res){
     res.header("Access-control-Allow-Origin", "*")
     res.header("Access-control-Allow-Methods: GET, POST,PATCH, PUT, DELETE, OPTIONS");
-    ProductData.updateOne({_id:req.body.product._id},{$set:{ productId:req.body.product.productId,
+    ProductData.updateOne({_id:req.body.product._id},{$set:{ 
+        productId:req.body.product.productId,
         productName:req.body.product.productName,
         productCode:req.body.product.productCode,
         releaseDate:req.body.product.releaseDate,

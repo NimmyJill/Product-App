@@ -14,7 +14,8 @@ export class UsersService {
    .subscribe(data =>{ console.log(data)})   
   }
   login(credential){
-    console.log(credential);
-   return this.http.post('http://localhost:3000/login',{"credential":credential});
+    // console.log(credential);
+   return this.http.post('http://localhost:3000/login',{"credential":credential})
+  //  .subscribe(data =>{ console.log(data)});
   }
 }

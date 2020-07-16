@@ -15,13 +15,13 @@
 
        <div class="form-control">
            <label >Email</label> &nbsp;
-           <input type="email" placeholder="Enter email" id="username" name="name">
+           <input type="email" [(ngModel)]="userCredential.email" placeholder="Enter email" id="username" name="name">
            
        </div>
        
        <div class="form-control">
            <label >Password</label> &nbsp;
-           <input type="password" placeholder="Enter password" id="pswd" name="pswd" >
+           <input type="password" [(ngModel)]="userCredential.password" placeholder="Enter password" id="pswd" name="pswd" >
            
        </div>                 
        
